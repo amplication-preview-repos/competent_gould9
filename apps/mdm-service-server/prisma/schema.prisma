@@ -53,3 +53,26 @@ model User {
   updatedAt DateTime @updatedAt
   username  String   @unique
 }
+
+model EntityDefinition {
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(cuid())
+  name        String?
+  updatedAt   DateTime @updatedAt
+}
+
+model FieldDefinition {
+  createdAt DateTime                      @default(now())
+  entity    String?
+  id        String                        @id @default(cuid())
+  name      String?
+  required  Boolean?
+  typeField EnumFieldDefinitionTypeField?
+  unique    Boolean?
+  updatedAt DateTime                      @updatedAt
+}
+
+enum EnumFieldDefinitionTypeField {
+  Option1
+}

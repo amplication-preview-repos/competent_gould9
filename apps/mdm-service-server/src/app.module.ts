@@ -5,6 +5,8 @@ import { LocationModule } from "./location/location.module";
 import { EmployeeModule } from "./employee/employee.module";
 import { SupplierModule } from "./supplier/supplier.module";
 import { UserModule } from "./user/user.module";
+import { EntityDefinitionModule } from "./entityDefinition/entityDefinition.module";
+import { FieldDefinitionModule } from "./fieldDefinition/fieldDefinition.module";
 import { HealthModule } from "./health/health.module";
 import { PrismaModule } from "./prisma/prisma.module";
 import { SecretsManagerModule } from "./providers/secrets/secretsManager.module";
@@ -25,6 +27,8 @@ import { ApolloDriver, ApolloDriverConfig } from "@nestjs/apollo";
     EmployeeModule,
     SupplierModule,
     UserModule,
+    EntityDefinitionModule,
+    FieldDefinitionModule,
     HealthModule,
     PrismaModule,
     SecretsManagerModule,

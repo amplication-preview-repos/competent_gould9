@@ -29,6 +29,14 @@ import { UserList } from "./user/UserList";
 import { UserCreate } from "./user/UserCreate";
 import { UserEdit } from "./user/UserEdit";
 import { UserShow } from "./user/UserShow";
+import { EntityDefinitionList } from "./entityDefinition/EntityDefinitionList";
+import { EntityDefinitionCreate } from "./entityDefinition/EntityDefinitionCreate";
+import { EntityDefinitionEdit } from "./entityDefinition/EntityDefinitionEdit";
+import { EntityDefinitionShow } from "./entityDefinition/EntityDefinitionShow";
+import { FieldDefinitionList } from "./fieldDefinition/FieldDefinitionList";
+import { FieldDefinitionCreate } from "./fieldDefinition/FieldDefinitionCreate";
+import { FieldDefinitionEdit } from "./fieldDefinition/FieldDefinitionEdit";
+import { FieldDefinitionShow } from "./fieldDefinition/FieldDefinitionShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -96,6 +104,20 @@ const App = (): React.ReactElement => {
           edit={UserEdit}
           create={UserCreate}
           show={UserShow}
+        />
+        <Resource
+          name="EntityDefinition"
+          list={EntityDefinitionList}
+          edit={EntityDefinitionEdit}
+          create={EntityDefinitionCreate}
+          show={EntityDefinitionShow}
+        />
+        <Resource
+          name="FieldDefinition"
+          list={FieldDefinitionList}
+          edit={FieldDefinitionEdit}
+          create={FieldDefinitionCreate}
+          show={FieldDefinitionShow}
         />
       </Admin>
     </div>
