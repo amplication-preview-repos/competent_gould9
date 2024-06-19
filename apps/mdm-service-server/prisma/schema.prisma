@@ -1,0 +1,78 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Customer {
+  address     String?
+  createdAt   DateTime  @default(now())
+  dateOfBirth DateTime?
+  email       String?
+  id          String    @id @default(cuid())
+  name        String?
+  phone       String?
+  updatedAt   DateTime  @updatedAt
+}
+
+model Product {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Location {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Employee {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model Supplier {
+  createdAt DateTime @default(now())
+  id        String   @id @default(cuid())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  createdAt DateTime @default(now())
+  email     String?  @unique
+  firstName String?
+  id        String   @id @default(cuid())
+  lastName  String?
+  password  String
+  roles     Json
+  updatedAt DateTime @updatedAt
+  username  String   @unique
+}
+
+model EntityDefinition {
+  createdAt   DateTime @default(now())
+  description String?
+  id          String   @id @default(cuid())
+  name        String?
+  updatedAt   DateTime @updatedAt
+}
+
+model FieldDefinition {
+  createdAt DateTime                      @default(now())
+  entity    String?
+  id        String                        @id @default(cuid())
+  name      String?
+  required  Boolean?
+  typeField EnumFieldDefinitionTypeField?
+  unique    Boolean?
+  updatedAt DateTime                      @updatedAt
+}
+
+enum EnumFieldDefinitionTypeField {
+  Option1
+}
